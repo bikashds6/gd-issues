@@ -1,0 +1,23 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.airdit_GoodsIssue.controller.Master"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Title">
+				<content>
+					<List id="list" items="{/products}" updateFinished="onUpdateFinished">
+						<items>
+							<ObjectListItem id="objlist" type="Active" selected="true"  press="itempress" title="{id}" icon="{image}">
+							</ObjectListItem>
+						</items>
+					</List>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://add" press="_onPressHandler"/>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

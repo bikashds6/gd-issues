@@ -1,0 +1,17 @@
+[{
+	"Item": 1,
+	"Material": "Yaris",
+	"Quantity": 1,
+	"Vne": "Toyota",
+	"Slot": "9/19/2017",
+	"Batch": "966968126-X",
+	"RePlot": "4/6/2018"
+}, {
+	"Item": 2,
+	"Material": "Truck",
+	"Quantity": 2,
+	"Vne": "Mitsubishi",
+	"Slot": "5/28/2018",
+	"Batch": "136581883-7",
+	"RePlot": "6/2/2018"
+}]

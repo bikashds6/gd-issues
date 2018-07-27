@@ -1,0 +1,113 @@
+<mvc:View controllerName="com.sap.airdit_GoodsIssue.controller.DetailsRegardingIssue" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Page showNavButton="true" navButtonPress="myNavBack" title="{i18n>sap.ui.airditGoods_Issue.updateDetailsOfGoods}" id="detailsGoods">
+		<content>
+			<!--<VBox class="sapUiSmallMargin">
+				<VBox height="10%"></VBox>
+			</VBox>
+			<VBox height="10%"></VBox>-->
+			<VBox class="sapUiLargeMarginBeginEnd">
+				<f:SimpleForm id="SimpleFormToolbar" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+					singleContainerFullSize="false">
+					<f:content>
+						<core:Title text=""/>
+						<Label text="{i18n>sap.ui.airditGoods_Issue.movementType}"/>
+						<Input value="{/0/productname}" editable="false">
+							<!--<layoutData>
+								<l:GridData span="XL2 L2 M4 S4"/>
+							</layoutData>-->
+						</Input>
+						<Label text="{i18n>sap.ui.airditGoods_Issue..businessArea}"/>
+						<Input value="{/0/info}" editable="false">
+							<!--<layoutData>
+								<l:GridData span="XL2 L2 M4 S4"/>
+							</layoutData>-->
+						</Input>
+						<core:Title text=""/>
+						<Label text="{i18n>sap.ui.airditGoods_Issue.costCenter}"/>
+						<Input value="{/0/size}" editable="false">
+							<!--<layoutData>
+								<l:GridData span="XL2 L2 M4 S4"/>
+							</layoutData>-->
+						</Input>
+					</f:content>
+				</f:SimpleForm>
+				<Table id="tbl" items="{/data}">
+					<columns>
+						<Column />
+						<Column width="">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.item}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.material}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.quantity}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.vne}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.slot}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.batch}" textAlign="Begin"/>
+						</Column>
+						<Column minScreenWidth="Desktop" demandPopin="true">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.rePlot}" textAlign="Begin"/>
+						</Column>
+						<!--<Column hAlign="Center" width="">
+							<Text text="{i18n>sap.ui.airditGoods_Issue.action}"/>
+						</Column>-->
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<HBox>
+									<core:Icon src="sap-icon://add" visible="{path: 'createNew', formatter: '.enableControl'}" press="addEntry"/>
+									<core:Icon src="sap-icon://save" visible="{path: 'saveNew', formatter: '.enableControl'}" press="saveEntry"/>
+									<core:Icon src="sap-icon://delete" visible="{path: 'removeNew', formatter: '.enableControl'}" press="removeEntry"/>
+								</HBox>
+								<HBox>
+									<Text text="{item}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{item}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{material}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{material}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{quantity}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{quantity}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{vnE}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{vnE}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{slot}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{slot}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{batch}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{batch}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+								<HBox>
+									<Text text="{rePlot}" visible="{path: 'saveNew', formatter: '.disableControl'}"/>
+									<Input value="{rePlot}" visible="{path: 'saveNew', formatter: '.enableControl'}"/>
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>sap.ui.airditGoods_Issue.save}" type="Emphasized" press="onPress"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

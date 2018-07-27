@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Plant List"
+		items="{plant>/}"
+		confirm="_findPlantBindItemToInput">
+		<StandardListItem
+			title="{plant>name}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

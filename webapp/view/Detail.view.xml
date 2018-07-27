@@ -1,0 +1,9 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.airdit_GoodsIssue.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<Page title="Title">
+			<content></content>
+			<footer></footer>
+		</Page>
+	</App>
+</mvc:View>

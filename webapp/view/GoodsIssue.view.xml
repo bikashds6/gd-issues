@@ -1,0 +1,120 @@
+<mvc:View controllerName="com.sap.airdit_GoodsIssue.controller.GoodsIssue" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Page title="{i18n>sap.ui.airditGoods_Issue.goodsTitle}" showNavButton="true" navButtonPress="myNavBack" id="goodsIssue">
+		<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+			<content>
+				<VBox>
+					<f:SimpleForm id="SimpleFormToolbar" title="{i18n>sap.ui.airditGoods_Issue.goods}" editable="true" layout="ResponsiveGridLayout"
+						labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+						emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="false">
+						<f:content>
+							<core:Title text=""/>
+							<Label text="{i18n>sap.ui.airditGoods_Issue.documentDate}"></Label>
+							<!--<DatePicker id="DP3" displayFormat="short" change="handleChange"/>-->
+							<DatePicker displayFormat="short" id="myDP1" change="handleChange">
+								<!--<layoutData>
+									<l:GridData span="XL2 L2 M4 S4"/>
+								</layoutData>-->
+							</DatePicker>
+							<Label text="{i18n>sap.ui.airditGoods_Issue.materialSlip}"/>
+							<TextArea value="{/0/productname}" editable="false">
+								<!--<layoutData>
+									<l:GridData span="XL2 L2 M4 S4"/>
+								</layoutData>-->
+							</TextArea>
+							<Label text="{i18n>sap.ui.airditGoods_Issue.gr/gi_SlipNo}"></Label>
+							<TextArea value="{/0/description}" editable="false">
+								<!--<layoutData>
+									<l:GridData span="XL2 L2 M4 S4"/>
+								</layoutData>-->
+							</TextArea>
+							<core:Title text=""/>
+							<Label text="{i18n>sap.ui.airditGoods_Issue.postingDate}">
+								<!--<layoutData>
+									<l:GridData span="XL1 L1 M4 S4"/>
+								</layoutData>-->
+							</Label>
+							<DatePicker displayFormat="short" id="myDP2" change="handleChange">
+								<!--<layoutData>
+									<l:GridData span="XL2 L2 M4 S4"/>
+								</layoutData>-->
+							</DatePicker>
+							<Label text="{i18n>sap.ui.airditGoods_Issue.docHeadertext}">
+								<!--<layoutData>
+									<l:GridData span="XL1 L1 M4 S4"/>
+								</layoutData>-->
+							</Label>
+							<TextArea value="{/0/size}" editable="false">
+								<!--<layoutData>
+									<l:GridData span="XL2 L2 M4 S4"/>
+								</layoutData>-->
+							</TextArea>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormChange480_Trial" editable="true" layout="ResponsiveGridLayout"
+						title="{i18n>sap.ui.airditGoods_Issue.defaultForDocumentItems}" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="false">
+						<f:content>
+							<core:Title text=""/>
+							<Label text="Movement Type"/>
+							<!--<Select change="onChange" items="{data>/Keys}" enabled="true">
+								<core:Item text="{data>Key1}"/>
+							</Select>-->
+							<Input id="mtype" value="{/0/productname}" showValueHelp="true" valueHelpRequest="_onSelectMovement" editable="false"/>
+							<Label text="Special Stock"/>
+							<Input value="{/0/productname}" editable="false"/>
+							<Label text="Plant"/>
+							<Input id="ptype" value="{/0/star}" showValueHelp="true" valueHelpRequest="_onSelectPlant" editable="false"/>
+							<Label text="Reason For Movement"/>
+							<Input value="{/0/productname}" editable="false"/>
+							<Label text="Storage Location"/>
+							<Input value="{/0/info}" editable="false"/>
+							<core:Title text=""/>
+							<Label text="G/L Account"/>
+							<Input value="{/0/productname}" editable="false"/>
+							<Label text="Business Area"/>
+							<Input value="{/0/info}" editable="false"/>
+							<Label text="Recipient"/>
+							<Input value="{/0/productname}" editable="false"/>
+							<Label text="WBS Element"/>
+							<Input value="{/0/info}" editable="false"/>
+							<Label text="Cost Center"/>
+							<Input value="{/0/size}" editable="false"/>
+							<core:Title text=""/>
+							<!--	<CheckBox text="Suggest Zero Lines"/>-->
+							<!--<Label text=""/>
+							<Select change="onChange" items="{data>/Keys}" enabled="true">
+								<core:Item text="{data>Key1}"/>
+							</Select>-->
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+				<VBox class="sapUiSmallMargin">
+					<f:SimpleForm id="SimpleFormDisplay354wideDual" title="{i18n>sap.ui.airditGoods_Issue.gr/gi_slipTitle}" editable="true"
+						layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+						emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="4" singleContainerFullSize="false">
+						<f:content>
+							<core:Title text=""/>
+							<CheckBox text="{i18n>sap.ui.airditGoods_Issue.print}"/>
+							<core:Title text=""/>
+							<CheckBox text="{i18n>sap.ui.airditGoods_Issue.iSlip/itext}"/>
+							<core:Title text=""/>
+							<CheckBox text="{i18n>sap.ui.airditGoods_Issue.individualSlip}"/>
+							<core:Title text=""/>
+							<CheckBox text="{i18n>sap.ui.airditGoods_Issue.collectiveSlip}" editable="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</VBox>
+			</content>
+		</Panel>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>sap.ui.airditGoods_Issue.continue}" type="Emphasized" press="onPress"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
